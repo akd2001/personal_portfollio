@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --deepbg: #01000c;
+  --yellow: #fdfc15;
+  --light: #ffffff;
+}
