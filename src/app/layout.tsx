@@ -1,15 +1,15 @@
-import StyledComponentsRegistry from "@/lib/styledRegistry";
+import StyledComponentsRegistry from "@/components/styledRegistry";
 import "./global.css";
-import { Poppins } from "next/font/google";
+import { Poppins, Maven_Pro } from "next/font/google";
 
 export const metadata = {
   title: "Sayandeep Karak",
   description: "Sayandeep Karak's personal portfolio",
 };
 
-const popp = Poppins({
+const popp = Maven_Pro({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export default function RootLayout({
