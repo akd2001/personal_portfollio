@@ -16,11 +16,30 @@ export const HomeImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   img {
     height: 100%;
     width: auto;
-    box-shadow: -0.6vw -0.6vw 0px 0px var(--theme-blue);
+    opacity: 0;
+    transform: translateX(-6vw);
   }
+`;
+
+const ImageSticks = styled.span`
+  position: absolute;
+  background-color: var(--theme-blue);
+  top: 6%;
+  left: 0;
+`;
+
+export const StickOne = styled(ImageSticks)`
+  width: 0%;
+  height: 0.6vw;
+`;
+export const StickTwo = styled(ImageSticks)`
+  width: 0.6vw;
+  height: 0%;
+  left: -0.6vw;
 `;
 
 export const HomeDetailsWrapper = styled.section`
@@ -55,13 +74,21 @@ export const DetailsTop = styled.div`
   width: 100%;
 `;
 
-export const Greet = styled.p`
+export const Greet = styled.div`
   font-size: 2vw;
   font-weight: 600;
   color: var(--theme-blue);
+  margin-left: 0.12vw;
 `;
 
-export const MainText = styled.p`
+export const TextHider = styled.div`
+  overflow: hidden;
+  p {
+    transform: translateY(8vw);
+  }
+`;
+
+export const MainText = styled.div`
   position: relative;
   font-size: 5vw;
   font-weight: 700;
@@ -70,23 +97,30 @@ export const MainText = styled.p`
   color: var(--theme-blue);
 `;
 
-export const ShadowText = styled.span`
+export const ShadowText = styled.div`
   position: absolute;
   left: 0;
   font-size: 7vw;
   color: var(--shadow-light);
   z-index: -1;
+  margin-left: -0.2vw;
+  line-height: 9vw;
 `;
 
-export const Description = styled.p`
-  font-size: 1.2vw;
+export const Description = styled.div`
+  position: relative;
   margin-top: 7vw;
   padding-left: 1.5vw;
-  position: relative;
-  &:before {
-    content: "";
+  overflow: hidden;
+  p {
+    font-size: 1.2vw;
+    display: inline-block;
+    transform: translateX(4vw);
+    opacity: 0;
+  }
+  span {
     position: absolute;
-    height: 106%;
+    height: 0%;
     width: 0.3vw;
     background-color: var(--shadow-light);
     top: 0;
@@ -100,9 +134,9 @@ export const ResumeButton = styled.button`
   padding: 0.6vw 3vw;
   background: transparent;
   outline: none;
-  border: 0.2vw solid var(--theme-blue);
+  border: 0.2vw solid transparent;
+  color: var(--light);
   border-radius: 0.2vw;
-  color: var(--theme-blue);
   font-family: "__Maven_Pro_01aeb3", "__Maven_Pro_Fallback_01aeb3";
   font-weight: 600;
   cursor: pointer;
@@ -111,20 +145,20 @@ export const ResumeButton = styled.button`
   align-items: center;
   position: relative;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  &:before {
-    content: "";
+  span {
+    border-radius: 0.2vw;
     position: absolute;
-    height: 0%;
+    height: 100%;
     width: 0%;
     background-color: var(--theme-blue);
     z-index: -1;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
   &:hover {
-    color: var(--light);
-    &:before {
-      height: 100%;
-      width: 100%;
+    color: var(--light) !important;
+    span {
+      height: 100% !important;
+      width: 100% !important;
     }
   }
 `;

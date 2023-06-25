@@ -16,3 +16,7 @@ html {
   --shadow-light: #01000c4d;
   --orange: #ff8e3d;
 }
+
+body {
+  overflow-x: hidden;
+}
