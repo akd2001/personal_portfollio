@@ -46,7 +46,7 @@ const HomeDetails = () => {
       ease: Expo.easeOut,
     });
     timeline.to("#resumeBtn", {
-      border: "0.2vw solid var(--theme-blue)",
+      borderColor: "var(--theme-blue)",
       delay: 0.2,
     });
     timeline.to("#resumeBtnFalse", {

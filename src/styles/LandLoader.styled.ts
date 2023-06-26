@@ -26,6 +26,9 @@ export const MyName = styled.p`
     left: 3px;
     border-radius: 4px;
   }
+  @media (max-width: 600px) {
+    font-size: 8.5vw;
+  }
 `;
 
 export const MyField = styled.p`
@@ -33,6 +36,10 @@ export const MyField = styled.p`
   letter-spacing: 0.6px;
   font-size: 1.2rem;
   transform: translateY(120px);
+  @media (max-width: 600px) {
+    margin-top: 5px;
+    font-size: 4vw;
+  }
 `;
 
 const animloader = keyframes`

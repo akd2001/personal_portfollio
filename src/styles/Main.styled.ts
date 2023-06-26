@@ -7,6 +7,13 @@ export const MainWrapper = styled.main`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: auto;
+  }
+  @media (max-width: 320px) {
+    width: -webkit-fill-available;
+  }
 `;
 
 export const HomeImageWrapper = styled.div`
@@ -15,13 +22,33 @@ export const HomeImageWrapper = styled.div`
   width: 40%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     opacity: 0;
     transform: translateX(-6vw);
+  }
+  p {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    img {
+      width: 80%;
+      margin-left: 10px;
+    }
+    p {
+      display: inline-block;
+      writing-mode: vertical-rl;
+      color: var(--shadow-light);
+      font-size: 13vw;
+      opacity: 0;
+      transform: translateY(-20vw);
+    }
   }
 `;
 
@@ -35,11 +62,17 @@ const ImageSticks = styled.span`
 export const StickOne = styled(ImageSticks)`
   width: 0%;
   height: 0.6vw;
+  @media (max-width: 800px) {
+    height: 0.5rem;
+  }
 `;
 export const StickTwo = styled(ImageSticks)`
   width: 0.6vw;
   height: 0%;
   left: -0.6vw;
+  @media (max-width: 800px) {
+    width: 0.5rem;
+  }
 `;
 
 export const HomeDetailsWrapper = styled.section`
@@ -50,6 +83,9 @@ export const HomeDetailsWrapper = styled.section`
   width: 60%;
   height: 100%;
   gap: 40px;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const TopActionBlock = styled.div`
@@ -58,16 +94,25 @@ export const TopActionBlock = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 3.14vw;
+  @media (max-width: 800px) {
+    padding-top: 5px;
+  }
 `;
 
 export const BottomDetailsBlock = styled.div`
   width: 100%;
   height: 75%;
-  padding: 4% 6%;
+  padding: 5vw 6% 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  @media (max-width: 800px) {
+    padding: 7rem 0 1rem 0;
+  }
+  @media (max-width: 600px) {
+    padding: 6rem 0 1rem 0;
+  }
 `;
 
 export const DetailsTop = styled.div`
@@ -79,6 +124,13 @@ export const Greet = styled.div`
   font-weight: 600;
   color: var(--theme-blue);
   margin-left: 0.12vw;
+  @media (max-width: 800px) {
+    font-size: 3vw;
+    margin-left: 0.2vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 4vw;
+  }
 `;
 
 export const TextHider = styled.div`
@@ -90,11 +142,17 @@ export const TextHider = styled.div`
 
 export const MainText = styled.div`
   position: relative;
-  font-size: 5vw;
   font-weight: 700;
   display: flex;
   align-items: center;
   color: var(--theme-blue);
+  font-size: 5vw;
+  @media (max-width: 800px) {
+    font-size: 9vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 10vw;
+  }
 `;
 
 export const ShadowText = styled.div`
@@ -105,6 +163,17 @@ export const ShadowText = styled.div`
   z-index: -1;
   margin-left: -0.2vw;
   line-height: 9vw;
+  ${TextHider}:nth-child(1) p {
+    margin-left: 0.3vw;
+  }
+  @media (max-width: 800px) {
+    font-size: 10vw;
+    line-height: 14vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 13vw;
+    line-height: 17vw;
+  }
 `;
 
 export const Description = styled.div`
@@ -117,6 +186,7 @@ export const Description = styled.div`
     display: inline-block;
     transform: translateX(4vw);
     opacity: 0;
+    text-align: justify;
   }
   span {
     position: absolute;
@@ -126,6 +196,19 @@ export const Description = styled.div`
     top: 0;
     left: 0.4vw;
   }
+  @media (max-width: 800px) {
+    padding: 0 1.1rem 0;
+    margin-top: 10vw;
+    span {
+      width: 0.3rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    margin-top: 14vw;
+  }
 `;
 
 export const ResumeButton = styled.button`
@@ -134,7 +217,9 @@ export const ResumeButton = styled.button`
   padding: 0.6vw 3vw;
   background: transparent;
   outline: none;
-  border: 0.2vw solid transparent;
+  border-width: 0.2vw;
+  border-style: solid;
+  border-color: transparent;
   color: var(--light);
   border-radius: 0.2vw;
   font-family: "__Maven_Pro_01aeb3", "__Maven_Pro_Fallback_01aeb3";
@@ -161,6 +246,13 @@ export const ResumeButton = styled.button`
       width: 100% !important;
     }
   }
+  @media (max-width: 800px) {
+    font-size: 1.3rem;
+    padding: 0.5rem 5%;
+    border-radius: 0.5vw;
+    margin: 2rem 0vw 0vw 0.4vw;
+    border-width: 0.3vw;
+  }
 `;
 
 export const DetailsButtonConatainer = styled.div`
@@ -170,6 +262,9 @@ export const DetailsButtonConatainer = styled.div`
   display: flex;
   justify-content: space-around;
   z-index: 2;
+  @media (max-width: 800px) {
+    height: 0.5rem;
+  }
 `;
 
 type detailsButtonProp = {
@@ -213,5 +308,17 @@ export const DetailsButton = styled.button<detailsButtonProp>`
   }
   &:hover {
     background-color: var(--orange);
+  }
+  @media (max-width: 800px) {
+    padding: 0vw 3%;
+    border-radius: 0.5vw;
+    p {
+      font-size: 1rem;
+    }
+    span.sticks {
+      top: calc(-${({ y }) => y} - -0.5rem);
+      height: calc(${({ y }) => y} - 1.5vw);
+      width: 1px;
+    }
   }
 `;

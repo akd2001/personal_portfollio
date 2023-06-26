@@ -1,6 +1,6 @@
 import StyledComponentsRegistry from "@/components/styledRegistry";
 import "./global.css";
-import { Poppins, Maven_Pro } from "next/font/google";
+import { Maven_Pro } from "next/font/google";
 
 export const metadata = {
   title: "Sayandeep Karak",

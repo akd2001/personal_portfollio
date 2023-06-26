@@ -14,7 +14,7 @@ const LandLoader = () => {
     const timeline = gsap.timeline();
     timeline.to(".glower", {
       opacity: 1,
-      delay:.5,
+      delay: 0.5,
     });
     timeline.to(".details", {
       y: 0,

@@ -14,7 +14,7 @@ import HomeDetails from "../components/HomeDetails";
 import { Expo, gsap } from "gsap";
 
 export default function Home() {
-  const [isLandLoad, setIsLandLoad] = useState(true);
+  const [isLandLoad, setIsLandLoad] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,6 +24,7 @@ export default function Home() {
 
   useEffect(() => {
     const timeline = gsap.timeline();
+    const md = gsap.matchMedia();
     if (!isLandLoad) {
       timeline.to("#myImg", {
         x: 0,
@@ -42,6 +43,14 @@ export default function Home() {
         delay: 0.5,
         ease: Expo.easeOut,
       });
+      md.add("(max-width:800px)", () => {
+        gsap.to("#mobText", {
+          duration: 0.9,
+          opacity: 1,
+          y: 0,
+          ease: Expo.easeOut,
+        });
+      });
     }
     return () => {
       timeline.kill();
@@ -57,6 +66,11 @@ export default function Home() {
       <MainWrapper>
         <HomeImageWrapper>
           <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
+          {window.matchMedia("(max-width:800px)").matches && (
+            <>
+              <p id="mobText">{"<@developer>"}</p>
+            </>
+          )}
           <StickOne id="stickOne"></StickOne>
           <StickTwo id="stickTwo"></StickTwo>
         </HomeImageWrapper>
