@@ -4,17 +4,19 @@ import { useEffect, useState } from "react";
 import LandLoader from "../components/LandLoader";
 import {
   HomeImageWrapper,
-  MainWrapper,
+  MainSection,
   StickOne,
   StickTwo,
+  StyledHr,
 } from "@/styles/Main.styled";
 import Image from "next/image";
 import MyImage from "../assets/images/profile.png";
-import HomeDetails from "../components/HomeDetails";
+import HomeDetails from "./HomeDetails";
 import { Expo, gsap } from "gsap";
+import Skills from "./Skills";
 
 export default function Home() {
-  const [isLandLoad, setIsLandLoad] = useState<boolean>(true);
+  const [isLandLoad, setIsLandLoad] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -63,19 +65,23 @@ export default function Home() {
 
   return (
     <>
-      <MainWrapper>
-        <HomeImageWrapper>
-          <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
-          {window.matchMedia("(max-width:800px)").matches && (
-            <>
-              <p id="mobText">{"<@developer>"}</p>
-            </>
-          )}
-          <StickOne id="stickOne"></StickOne>
-          <StickTwo id="stickTwo"></StickTwo>
-        </HomeImageWrapper>
-        <HomeDetails />
-      </MainWrapper>
+      <main>
+        <MainSection>
+          <HomeImageWrapper>
+            <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
+            {window && window.matchMedia("(max-width:800px)").matches && (
+              <>
+                <p id="mobText">{"<@developer>"}</p>
+              </>
+            )}
+            <StickOne id="stickOne"></StickOne>
+            <StickTwo id="stickTwo"></StickTwo>
+          </HomeImageWrapper>
+          <HomeDetails />
+        </MainSection>
+        <StyledHr />
+        <Skills />
+      </main>
     </>
   );
 }

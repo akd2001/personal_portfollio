@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
-export const MainWrapper = styled.main`
+export const MainSection = styled.section`
   padding: 0% 4%;
-  height: 100vh;
+  height: min-content;
   width: 100vw;
   display: flex;
   justify-content: flex-start;
@@ -81,8 +81,8 @@ export const HomeDetailsWrapper = styled.section`
   justify-content: flex-start;
   align-items: center;
   width: 60%;
-  height: 100%;
-  gap: 40px;
+  align-self: flex-start;
+  gap: 11vw;
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -321,4 +321,10 @@ export const DetailsButton = styled.button<detailsButtonProp>`
       width: 1px;
     }
   }
+`;
+
+export const StyledHr = styled.hr`
+  width: 70vw;
+  background-color: var(--shadow-light);
+  margin: 25px auto;
 `;
