@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import LandLoader from "../components/LandLoader";
 import {
@@ -7,16 +6,21 @@ import {
   MainSection,
   StickOne,
   StickTwo,
-  StyledHr,
 } from "@/styles/Main.styled";
 import Image from "next/image";
 import MyImage from "../assets/images/profile.png";
 import HomeDetails from "./HomeDetails";
 import { Expo, gsap } from "gsap";
 import Skills from "./Skills";
+// import useLocoScroll from "@/hooks/useLocoScroll";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: false });
 
 export default function Home() {
   const [isLandLoad, setIsLandLoad] = useState<boolean>(false);
+  // const scroller = useLocoScroll(!isLandLoad);
 
   useEffect(() => {
     setTimeout(() => {
@@ -69,17 +73,12 @@ export default function Home() {
         <MainSection>
           <HomeImageWrapper>
             <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
-            {window && window.matchMedia("(max-width:800px)").matches && (
-              <>
-                <p id="mobText">{"<@developer>"}</p>
-              </>
-            )}
+            <p id="mobText">{"<@developer>"}</p>
             <StickOne id="stickOne"></StickOne>
             <StickTwo id="stickTwo"></StickTwo>
           </HomeImageWrapper>
           <HomeDetails />
         </MainSection>
-        <StyledHr />
         <Skills />
       </main>
     </>

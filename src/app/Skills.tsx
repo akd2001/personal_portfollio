@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SkillCardBox, SkillSection } from "@/styles/Skill.styled";
 import { StaticImageData } from "next/image";
 import JsIcon from "../assets/icons/js.png";
@@ -26,44 +26,31 @@ import LinuxIcon from "../assets/icons/linux.png";
 import OracleIcon from "../assets/icons/oracle.png";
 import PostManIcon from "../assets/icons/post.png";
 import SkillCard from "@/components/SkillCard";
+import { StyledHr } from "@/styles/Main.styled";
 
 const Skills = () => {
   return (
     <>
-      <SkillSection>
-        <h1>Comfortable In</h1>
-        <SkillCardBox>
-          {comfortSkills?.map((e, i) => (
-            <SkillCard
-              key={i}
-              color={e.themeColor}
-              image={e.img}
-              name={e.name}
-            />
-          ))}
-        </SkillCardBox>
-        <h1>Familier In</h1>
-        <SkillCardBox>
-          {familierSkills?.map((e, i) => (
-            <SkillCard
-              key={i}
-              color={e.themeColor}
-              image={e.img}
-              name={e.name}
-            />
-          ))}
-        </SkillCardBox>
-        <h1>Tools & Databases</h1>
-        <SkillCardBox>
-          {OtherTools?.map((e, i) => (
-            <SkillCard
-              key={i}
-              color={e.themeColor}
-              image={e.img}
-              name={e.name}
-            />
-          ))}
-        </SkillCardBox>
+      <SkillSection id="skills">
+        <StyledHr />
+        <SkillCard
+          cardClass="comSkill"
+          head="Comfortable in"
+          skills={comfortSkills}
+          direction="right"
+        />
+        <SkillCard
+          cardClass="famSkill"
+          head="Familier in"
+          skills={familierSkills}
+          direction="left"
+        />
+        <SkillCard
+          cardClass="othSkill"
+          head="Tools & databases"
+          skills={otherTools}
+          direction="right"
+        />
       </SkillSection>
     </>
   );
@@ -71,7 +58,7 @@ const Skills = () => {
 
 export default Skills;
 
-type skillDetails = {
+export type skillDetails = {
   name: string;
   img: StaticImageData;
   themeColor: string;
@@ -168,7 +155,7 @@ const familierSkills: Array<skillDetails> = [
   },
 ];
 
-const OtherTools: Array<skillDetails> = [
+const otherTools: Array<skillDetails> = [
   {
     name: "Git",
     img: GitIcon,

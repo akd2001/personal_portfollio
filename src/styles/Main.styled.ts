@@ -268,12 +268,14 @@ export const DetailsButtonConatainer = styled.div`
 `;
 
 type detailsButtonProp = {
-  y: string | number;
+  y: "first" | "second" | "third";
 };
 
 export const DetailsButton = styled.button<detailsButtonProp>`
   border-radius: 0.2vw;
-  transform: translateY(${({ y }) => y});
+  transform: translateY(
+    ${({ y }) => (y == "first" ? "5.7vw" : y == "second" ? "3vw" : "9vw")}
+  );
   display: flex;
   border: none;
   padding: 0vw 1vw;
@@ -292,8 +294,13 @@ export const DetailsButton = styled.button<detailsButtonProp>`
   span.sticks {
     position: absolute;
     width: 0.01vw;
-    height: calc(${({ y }) => y} - 0.6vw);
-    top: calc(-${({ y }) => y} - -0.6vw);
+    height: calc(
+      ${({ y }) => (y == "first" ? "5.7vw" : y == "second" ? "3vw" : "9vw")} -
+        0.6vw
+    );
+    top: calc(
+      -${({ y }) => (y == "first" ? "5.7vw" : y == "second" ? "3vw" : "9vw")} - -0.6vw
+    );
     background-color: var(--theme-blue);
     left: 50%;
     z-index: -1;
@@ -310,14 +317,23 @@ export const DetailsButton = styled.button<detailsButtonProp>`
     background-color: var(--orange);
   }
   @media (max-width: 800px) {
+    transform: translateY(
+      ${({ y }) => (y == "first" ? "3rem" : y == "second" ? "1rem" : "5rem")}
+    );
     padding: 0vw 3%;
     border-radius: 0.5vw;
     p {
       font-size: 1rem;
     }
     span.sticks {
-      top: calc(-${({ y }) => y} - -0.5rem);
-      height: calc(${({ y }) => y} - 1.5vw);
+      top: calc(
+        -${({ y }) =>
+            y == "first" ? "3rem" : y == "second" ? "1rem" : "5rem"} - -0.5rem
+      );
+      height: calc(
+        ${({ y }) => (y == "first" ? "3rem" : y == "second" ? "1rem" : "5rem")} -
+          1.5vw
+      );
       width: 1px;
     }
   }
@@ -326,5 +342,5 @@ export const DetailsButton = styled.button<detailsButtonProp>`
 export const StyledHr = styled.hr`
   width: 70vw;
   background-color: var(--shadow-light);
-  margin: 25px auto;
+  margin: 25px auto 0;
 `;

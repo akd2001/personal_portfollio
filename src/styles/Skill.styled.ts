@@ -29,10 +29,10 @@ export const SkillCardBox = styled.div`
 
 type skillProp = {
   themeColor: string;
+  x: number;
 };
 
 export const IndividualSkill = styled.div<skillProp>`
-  /* padding: 1vw 2vw; */
   height: 7.5vw;
   width: 7.5vw;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -46,6 +46,7 @@ export const IndividualSkill = styled.div<skillProp>`
   align-items: center;
   overflow: hidden;
   gap: 0.7vw;
+  transform: translateX(${({ x }) => x}vw);
   p {
     font-size: 1vw;
   }
@@ -83,7 +84,7 @@ export const IndividualSkill = styled.div<skillProp>`
     }
   }
   @media (max-width: 800px) {
-    /* padding: 1rem 2rem; */
+    transform: translateX(0);
     border-radius: 4px;
     height: 110px;
     width: 110px;

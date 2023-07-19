@@ -1,6 +1,10 @@
+"use client";
 import React, { useEffect } from "react";
 import { DetailsButton, DetailsButtonConatainer } from "@/styles/Main.styled";
-import { gsap } from "gsap";
+import { Power1, gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const ButtonHanger = () => {
   useEffect(() => {
@@ -21,31 +25,34 @@ const ButtonHanger = () => {
       timeline.kill();
     };
   }, []);
+
+  const handleScrollTo = () => {
+    const targetElement = document.getElementById("skills");
+    if (targetElement) {
+      gsap.to(window, {
+        scrollTo: { y: targetElement },
+        duration: 1,
+        ease: Power1.easeInOut,
+      });
+    }
+  };
+
   return (
     <>
       <DetailsButtonConatainer id="dtl-btn-wrap">
-        <DetailsButton
-          y={window.matchMedia("(max-width:800px)").matches ? "3rem" : "5.7vw"}
-          className="hangBtn"
-        >
+        <DetailsButton y={"first"} className="hangBtn" onClick={handleScrollTo}>
           <span className="sticks">
             <span className="hiders"></span>
           </span>
           <p className="hangText">Skills</p>
         </DetailsButton>
-        <DetailsButton
-          y={window.matchMedia("(max-width:800px)").matches ? "1rem" : "3vw"}
-          className="hangBtn"
-        >
+        <DetailsButton y={"second"} className="hangBtn">
           <span className="sticks">
             <span className="hiders"></span>
           </span>
           <p className="hangText">Education</p>
         </DetailsButton>
-        <DetailsButton
-          y={window.matchMedia("(max-width:800px)").matches ? "5rem" : "9vw"}
-          className="hangBtn"
-        >
+        <DetailsButton y={"third"} className="hangBtn">
           <span className="sticks">
             <span className="hiders"></span>
           </span>

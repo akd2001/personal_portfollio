@@ -8,6 +8,12 @@ html {
   font-size: 16px;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 :root {
   --deepbg: #01000c;
   --yellow: #fdfc15;
@@ -15,10 +21,6 @@ html {
   --theme-blue: #021550;
   --shadow-light: #01000c4d;
   --orange: #ff8e3d;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
