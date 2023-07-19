@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: false });
 
 export default function Home() {
-  const [isLandLoad, setIsLandLoad] = useState<boolean>(false);
+  const [isLandLoad, setIsLandLoad] = useState<boolean>(true);
   // const scroller = useLocoScroll(!isLandLoad);
 
   useEffect(() => {
