@@ -28,15 +28,13 @@ export const SkillCardBox = styled.div`
 `;
 
 type skillProp = {
-  themeColor: string;
   x: number;
 };
 
 export const IndividualSkill = styled.div<skillProp>`
   height: 7.5vw;
   width: 7.5vw;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 0.4vw;
   cursor: pointer;
   position: relative;
@@ -56,7 +54,7 @@ export const IndividualSkill = styled.div<skillProp>`
   }
   .skillStick {
     position: absolute;
-    background-color: ${({ themeColor }) => themeColor};
+    background-color: ${({ themecolor }) => themecolor};
     transition: transform 0.2s ease-out;
   }
   .skillSt-1 {

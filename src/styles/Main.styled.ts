@@ -340,7 +340,7 @@ export const DetailsButton = styled.button<detailsButtonProp>`
 `;
 
 export const StyledHr = styled.hr`
-  width: 70vw;
+  width: 70vw !important;
   background-color: var(--shadow-light);
   margin: 25px auto 0;
 `;

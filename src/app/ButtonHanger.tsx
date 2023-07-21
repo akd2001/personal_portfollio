@@ -26,8 +26,8 @@ const ButtonHanger = () => {
     };
   }, []);
 
-  const handleScrollTo = () => {
-    const targetElement = document.getElementById("skills");
+  const handleScrollTo = (target: string) => {
+    const targetElement = document.getElementById(target);
     if (targetElement) {
       gsap.to(window, {
         scrollTo: { y: targetElement },
@@ -40,13 +40,21 @@ const ButtonHanger = () => {
   return (
     <>
       <DetailsButtonConatainer id="dtl-btn-wrap">
-        <DetailsButton y={"first"} className="hangBtn" onClick={handleScrollTo}>
+        <DetailsButton
+          y={"first"}
+          className="hangBtn"
+          onClick={() => handleScrollTo("skills")}
+        >
           <span className="sticks">
             <span className="hiders"></span>
           </span>
           <p className="hangText">Skills</p>
         </DetailsButton>
-        <DetailsButton y={"second"} className="hangBtn">
+        <DetailsButton
+          y={"second"}
+          className="hangBtn"
+          onClick={() => handleScrollTo("education")}
+        >
           <span className="sticks">
             <span className="hiders"></span>
           </span>

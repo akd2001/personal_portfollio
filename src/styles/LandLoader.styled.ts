@@ -1,6 +1,6 @@
 import { keyframes, styled } from "styled-components";
 
-export const MainWrapper = styled.main`
+export const MainWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: var(--deepbg);

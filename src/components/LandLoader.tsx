@@ -45,17 +45,19 @@ const LandLoader = () => {
   }, []);
 
   return (
-    <MainWrapper>
-      <GlowWrapper className="glower"></GlowWrapper>
-      <TextHider>
-        <MyName className={"details"}>
-          <span className={"topbaranimate"}></span>
-          Sayandeep Karak
-        </MyName>
-        <MyField className={"details"}>Web Developer</MyField>
-      </TextHider>
-      <CupLoader className={"cup"}></CupLoader>
-    </MainWrapper>
+    <>
+      <MainWrapper>
+        <GlowWrapper className="glower"></GlowWrapper>
+        <TextHider>
+          <MyName className={"details"}>
+            <span className={"topbaranimate"}></span>
+            Sayandeep Karak
+          </MyName>
+          <MyField className={"details"}>Web Developer</MyField>
+        </TextHider>
+        <CupLoader className={"cup"}></CupLoader>
+      </MainWrapper>
+    </>
   );
 };
 

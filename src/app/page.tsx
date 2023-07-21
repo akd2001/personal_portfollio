@@ -12,15 +12,13 @@ import MyImage from "../assets/images/profile.png";
 import HomeDetails from "./HomeDetails";
 import { Expo, gsap } from "gsap";
 import Skills from "./Skills";
-// import useLocoScroll from "@/hooks/useLocoScroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Education from "./Education";
 
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({ ignoreMobileResize: false });
 
 export default function Home() {
-  const [isLandLoad, setIsLandLoad] = useState<boolean>(true);
-  // const scroller = useLocoScroll(!isLandLoad);
+  const [isLandLoad, setIsLandLoad] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -63,23 +61,26 @@ export default function Home() {
     };
   }, [isLandLoad]);
 
-  if (isLandLoad) {
-    return <LandLoader />;
-  }
-
   return (
     <>
       <main>
-        <MainSection>
-          <HomeImageWrapper>
-            <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
-            <p id="mobText">{"<@developer>"}</p>
-            <StickOne id="stickOne"></StickOne>
-            <StickTwo id="stickTwo"></StickTwo>
-          </HomeImageWrapper>
-          <HomeDetails />
-        </MainSection>
-        <Skills />
+        {isLandLoad ? (
+          <LandLoader />
+        ) : (
+          <>
+            <MainSection>
+              <HomeImageWrapper>
+                <Image src={MyImage} alt="Sayandeep Karak" id="myImg" />
+                <p id="mobText">{"<@developer>"}</p>
+                <StickOne id="stickOne"></StickOne>
+                <StickTwo id="stickTwo"></StickTwo>
+              </HomeImageWrapper>
+              <HomeDetails />
+            </MainSection>
+            <Skills />
+            <Education />
+          </>
+        )}
       </main>
     </>
   );

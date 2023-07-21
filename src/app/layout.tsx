@@ -1,7 +1,6 @@
 import StyledComponentsRegistry from "@/components/styledRegistry";
 import "../styles/global.css";
 import { Maven_Pro } from "next/font/google";
-// import "../styles/locomotive-scroll.css";
 
 export const metadata = {
   title: "Sayandeep Karak",

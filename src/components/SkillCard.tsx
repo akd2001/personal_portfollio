@@ -55,14 +55,19 @@ const SkillCard = ({ head, skills, cardClass, direction }: props) => {
         {skills?.map((e, i) => (
           <IndividualSkill
             key={i}
-            themeColor={e.themeColor}
             className={cardClass}
             x={direction == "left" ? -100 + i + 1 : 100 + i + 1}
           >
             <Image src={e.img} width="0" height={"0"} alt="x" />
             <p>{e.name}</p>
-            <span className="skillStick skillSt-1"></span>
-            <span className="skillStick skillSt-2"></span>
+            <span
+              className="skillStick skillSt-1"
+              style={{ backgroundColor: e.themeColor }}
+            ></span>
+            <span
+              className="skillStick skillSt-2"
+              style={{ backgroundColor: e.themeColor }}
+            ></span>
           </IndividualSkill>
         ))}
       </SkillCardBox>

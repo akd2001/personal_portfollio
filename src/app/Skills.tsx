@@ -27,12 +27,33 @@ import OracleIcon from "../assets/icons/oracle.png";
 import PostManIcon from "../assets/icons/post.png";
 import SkillCard from "@/components/SkillCard";
 import { StyledHr } from "@/styles/Main.styled";
+import { Expo, gsap } from "gsap";
 
 const Skills = () => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const matchMedia = gsap.matchMedia();
+      matchMedia.add("(min-width: 801px)", () => {
+        gsap.from("#hr", {
+          width: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: "#hr",
+            scroller: "body",
+            start: "top 90%",
+          },
+          ease: Expo.easeOut,
+        });
+      });
+    });
+    return () => {
+      ctx.kill();
+    };
+  }, []);
   return (
     <>
       <SkillSection id="skills">
-        <StyledHr />
+        <StyledHr id="hr" />
         <SkillCard
           cardClass="comSkill"
           head="Comfortable in"
@@ -179,16 +200,16 @@ const otherTools: Array<skillDetails> = [
   {
     name: "Linux terminal",
     img: LinuxIcon,
-    themeColor: "#cb3837",
+    themeColor: "#fed133",
   },
   {
     name: "Postman",
     img: PostManIcon,
-    themeColor: "#ce1920",
+    themeColor: "#e8613a",
   },
   {
     name: "Oracle",
     img: OracleIcon,
-    themeColor: "#ce1920",
+    themeColor: "#ea353a",
   },
 ];
