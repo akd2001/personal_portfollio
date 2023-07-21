@@ -54,7 +54,6 @@ export const IndividualSkill = styled.div<skillProp>`
   }
   .skillStick {
     position: absolute;
-    background-color: ${({ themecolor }) => themecolor};
     transition: transform 0.2s ease-out;
   }
   .skillSt-1 {
