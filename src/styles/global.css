@@ -44,6 +44,12 @@ body {
   height: 0.8vw;
 }
 
+@media screen and (max-width: 800px) {
+  .downArrow{
+    margin: 16px 0;
+    height: 8px;
+  }
+}
 @media screen and (max-width: 320px) {
   body {
     min-width: 320px;

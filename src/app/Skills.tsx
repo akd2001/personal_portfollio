@@ -24,6 +24,7 @@ import MongodbIcon from "../assets/icons/mongodb.png";
 import NpmIcon from "../assets/icons/npm.png";
 import LinuxIcon from "../assets/icons/linux.png";
 import OracleIcon from "../assets/icons/oracle.png";
+import androidicon from "../assets/icons/android.png";
 import PostManIcon from "../assets/icons/post.png";
 import SkillCard from "@/components/SkillCard";
 import { StyledHr } from "@/styles/Main.styled";
@@ -32,18 +33,15 @@ import { Expo, gsap } from "gsap";
 const Skills = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const matchMedia = gsap.matchMedia();
-      matchMedia.add("(min-width: 801px)", () => {
-        gsap.from("#hr", {
-          width: 0,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: "#hr",
-            scroller: "body",
-            start: "top 90%",
-          },
-          ease: Expo.easeOut,
-        });
+      gsap.from("#hr", {
+        width: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: "#hr",
+          scroller: "body",
+          start: "top 90%",
+        },
+        ease: Expo.easeOut,
       });
     });
     return () => {
@@ -131,9 +129,6 @@ const comfortSkills: Array<skillDetails> = [
     img: BootIcon,
     themeColor: "#7910f7",
   },
-];
-
-const familierSkills: Array<skillDetails> = [
   {
     name: "Node.Js",
     img: NodeIcon,
@@ -149,15 +144,23 @@ const familierSkills: Array<skillDetails> = [
     img: MongooseIcon,
     themeColor: "#c6322b",
   },
+];
+
+const familierSkills: Array<skillDetails> = [
   {
     name: "Core Java",
     img: JavaIcon,
     themeColor: "#ea2d2e",
   },
   {
-    name: "Firebase",
-    img: FireIcon,
-    themeColor: "#fcca3f",
+    name: "React-native",
+    img: Reacticon,
+    themeColor: "#00ccff",
+  },
+  {
+    name: "Android",
+    img: androidicon,
+    themeColor: "#33de84",
   },
   {
     name: "C#",
@@ -177,6 +180,11 @@ const familierSkills: Array<skillDetails> = [
 ];
 
 const otherTools: Array<skillDetails> = [
+  {
+    name: "Firebase",
+    img: FireIcon,
+    themeColor: "#fcca3f",
+  },
   {
     name: "Git",
     img: GitIcon,

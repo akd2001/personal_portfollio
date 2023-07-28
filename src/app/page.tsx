@@ -18,7 +18,7 @@ import Education from "./Education";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [isLandLoad, setIsLandLoad] = useState<boolean>(false);
+  const [isLandLoad, setIsLandLoad] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {

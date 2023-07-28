@@ -24,29 +24,26 @@ const EducationCard = ({
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const matchMedia = gsap.matchMedia();
-      matchMedia.add("(min-width: 801px)", () => {
-        gsap.from(icon.current, {
-          opacity: 0,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: icon.current,
-            scroller: "body",
-            start: "top 95%",
-          },
-          ease: Expo.easeOut,
-        });
-        gsap.from(card.current, {
-          opacity: 0,
-          scale: 0.7,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: card.current,
-            scroller: "body",
-            start: "top 95%",
-          },
-          ease: Expo.easeOut,
-        });
+      gsap.from(icon.current, {
+        opacity: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: icon.current,
+          scroller: "body",
+          start: "top 80%",
+        },
+        ease: Expo.easeOut,
+      });
+      gsap.from(card.current, {
+        opacity: 0,
+        scale: 0.7,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: card.current,
+          scroller: "body",
+          start: "top 95%",
+        },
+        ease: Expo.easeOut,
       });
     });
     return () => {

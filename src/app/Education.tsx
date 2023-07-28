@@ -7,30 +7,27 @@ import EducationCard from "@/components/EducationCard";
 const Education = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const matchMedia = gsap.matchMedia();
-      matchMedia.add("(min-width: 801px)", () => {
-        gsap.from("#hrr", {
-          width: "0vw",
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: "#hrr",
-            scroller: "body",
-            start: "top 90%",
-          },
-          ease: Expo.easeOut,
-        });
-      });
-      gsap.from("#eduHead", {
-        opacity: 0,
-        y: 80,
-        duration: 0.5,
+      gsap.from("#hrr", {
+        width: "0vw",
+        duration: 0.6,
         scrollTrigger: {
-          trigger: "#eduHead",
+          trigger: "#hrr",
           scroller: "body",
           start: "top 90%",
         },
         ease: Expo.easeOut,
       });
+    });
+    gsap.from("#eduHead", {
+      opacity: 0,
+      y: 80,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "#eduHead",
+        scroller: "body",
+        start: "top 95%",
+      },
+      ease: Expo.easeOut,
     });
     return () => {
       ctx.kill();
@@ -68,7 +65,7 @@ type education = {
 const EducationJourney: Array<education> = [
   {
     title: "Secondary Education",
-    institute: "Khasmorah High School",
+    institute: "Hantal Bishalakshi High School",
     passingYear: 2019,
   },
   {
@@ -77,7 +74,7 @@ const EducationJourney: Array<education> = [
     passingYear: 2021,
   },
   {
-    title: "Certificate in Advanced Computer Programming & ApplicationS (CCPA)",
+    title: "Certificate in Advanced Computer Programming & Application (CACPA)",
     institute: "Ramakrishna Mission Shilpamandira",
     passingYear: 2023,
   },

@@ -53,7 +53,7 @@ const LandLoader = () => {
             <span className={"topbaranimate"}></span>
             Sayandeep Karak
           </MyName>
-          <MyField className={"details"}>Web Developer</MyField>
+          <MyField className={"details"}>Mern Stack Developer</MyField>
         </TextHider>
         <CupLoader className={"cup"}></CupLoader>
       </MainWrapper>
