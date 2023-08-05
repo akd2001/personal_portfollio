@@ -9,11 +9,12 @@ import img7 from "../assets/images/think/img7.jpg";
 import img8 from "../assets/images/think/img8.jpg";
 import img9 from "../assets/images/think/img9.jpg";
 import img10 from "../assets/images/think/img10.jpg";
+import img11 from "../assets/images/think/img11.jpg";
 
 export const think: nonHostedObject = {
   title: "Think",
   description:
     "Think Library Management System is a web application developed.The project aims to provide an user-friendly platform for managing library resources. Every actions and dummy transaction will track using sql trigger in the database like issue/return books,user payment, book add/update etc. .This project is given to me during Asp.net module of my CACPA course by Ramakrishna Mission Shilpamandira Computer Center.",
   technologies: ["Asp.net", "C#", "MS Internal Sql Server", "Bootstrap"],
-  images: [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10],
+  images: [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11],
 };
