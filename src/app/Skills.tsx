@@ -205,11 +205,11 @@ const otherTools: Array<skillDetails> = [
     img: NpmIcon,
     themeColor: "#cb3837",
   },
-  {
-    name: "Linux terminal",
-    img: LinuxIcon,
-    themeColor: "#fed133",
-  },
+  // {
+  //   name: "Linux terminal",
+  //   img: LinuxIcon,
+  //   themeColor: "#fed133",
+  // },
   {
     name: "Postman",
     img: PostManIcon,

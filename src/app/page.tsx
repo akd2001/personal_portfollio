@@ -14,6 +14,8 @@ import { Expo, gsap } from "gsap";
 import Skills from "./Skills";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Education from "./Education";
+import Project from "./Project";
+import Footer from "./Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,6 +81,8 @@ export default function Home() {
             </MainSection>
             <Skills />
             <Education />
+            <Project />
+            <Footer />
           </>
         )}
       </main>

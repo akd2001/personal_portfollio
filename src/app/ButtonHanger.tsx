@@ -60,7 +60,11 @@ const ButtonHanger = () => {
           </span>
           <p className="hangText">Education</p>
         </DetailsButton>
-        <DetailsButton y={"third"} className="hangBtn">
+        <DetailsButton
+          y={"third"}
+          className="hangBtn"
+          onClick={() => handleScrollTo("projects")}
+        >
           <span className="sticks">
             <span className="hiders"></span>
           </span>

@@ -293,7 +293,7 @@ export const DetailsButton = styled.button<detailsButtonProp>`
   }
   span.sticks {
     position: absolute;
-    width: 0.01vw;
+    width: 0.12vw;
     height: calc(
       ${({ y }) => (y == "first" ? "5.7vw" : y == "second" ? "3vw" : "9vw")} -
         0.6vw
